@@ -32,19 +32,10 @@ function adding() {
     let editBtn = document.createElement("button");
     let deleteBtn = document.createElement("button");
     liAdd.setAttribute("class", "toDO");
-    inputAdd.setAttribute("type", "text");
-    inputAdd.setAttribute("value", inputText);
-    inputAdd.readOnly = true;
-    editBtn.innerHTML = "수정";
-    editBtn.setAttribute("class", "edit");
-    editBtn.addEventListener("click", editing);
-    deleteBtn.innerHTML = "삭제";
-    deleteBtn.setAttribute("class", "delete");
-    deleteBtn.addEventListener("click", deleting);
+    liAdd.innerHTML = `<input type="text" value= ${inputText} readonly /><button class="edit">수정</button><button class="delete">삭제</button>`;
+    liAdd.children[1].addEventListener("click", editing);
+    liAdd.children[2].addEventListener("click", deleting);
     toDoList.appendChild(liAdd);
-    liAdd.appendChild(inputAdd);
-    liAdd.appendChild(editBtn);
-    liAdd.appendChild(deleteBtn);
   } else {
     alert("한 단어 이상 입력해주십시오");
   }
