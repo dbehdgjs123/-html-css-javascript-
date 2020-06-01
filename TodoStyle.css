@@ -1,0 +1,181 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body,
+html {
+  height: 100%;
+  background-color: teal;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+#page {
+  position: relative;
+  margin: 0 auto;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+li {
+  list-style: none;
+}
+#main_header {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+#main_section {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+.header_item {
+  width: 100%;
+  height: 200px;
+  background-color: darkgoldenrod;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#toDoForm {
+  text-align: center;
+  vertical-align: middle;
+}
+#toDoForm > h1 {
+  margin-bottom: 15px;
+  color: green;
+  font-size: 60px;
+}
+#toDoForm input[type="text"] {
+  height: 30px;
+  width: 70%;
+  border: none;
+  box-sizing: border-box;
+  vertical-align: top;
+  outline: none;
+}
+
+#toDoForm input[type="button"] {
+  height: 30px;
+  width: 30%;
+  border: none;
+  box-sizing: border-box;
+  margin-left: -10px;
+  outline: none;
+  background-color: yellowgreen;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  background-color: darksalmon;
+  border-radius: 20px;
+  position: relative;
+  overflow: auto;
+}
+.toDO {
+  margin-top: 25px;
+  margin-right: 25px;
+  height: 30px;
+  font-size: 0px;
+}
+.toDO > input[type="text"] {
+  height: 100%;
+  width: 50%;
+  border: none;
+  box-sizing: border-box;
+  vertical-align: top;
+  text-align: center;
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: transparent;
+}
+.toDO > button {
+  height: 100%;
+  width: 10%;
+  border: none;
+  box-sizing: border-box;
+
+  outline: none;
+  font-size: 15px;
+}
+.delete {
+  background-color: red;
+  color: whitesmoke;
+  border-radius: 0px 5px 5px 0px;
+}
+.edit {
+  background-color: yellowgreen;
+  color: whitesmoke;
+  border-radius: 5px 0px 0px 5px;
+}
+
+#modalPage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+#modalPage.active {
+  display: block;
+}
+.modalPannel {
+  background-color: black;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modalWindow {
+  background-color: blueviolet;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.modalWindow > h1 {
+  position: absolute;
+  align-self: center;
+  width: 320px;
+  height: 40px;
+}
+.modalExit {
+  width: 50px;
+  height: 30px;
+  margin-bottom: 20px;
+  color: red;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 30px;
+  background-color: gold;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+.modalBtn {
+  margin-top: 30px;
+  width: 50%;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: yellowgreen;
+  font-size: 20px;
+  font-weight: bold;
+  color: wheat;
+  outline: none;
+}
