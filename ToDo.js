@@ -3,11 +3,19 @@ const del = document.querySelector(".delete");
 const add = document.querySelector(".add");
 const addText = document.querySelector(".addText");
 const toDoList = document.querySelector(".TODoList");
+
 const modalBtn = document.querySelector(".modalBtn");
 const modalExit = document.querySelector(".modalExit");
 const modalPage = document.getElementById("modalPage");
+
 const menuBtn = document.querySelector(".menu_icon");
 const sideMenu = document.getElementById("side-nav");
+
+let sliderPage = 0; //슬라이더 페이지수 초기화
+
+const sliderContain = document.querySelector(".slider_box_contain");
+const sliderLeft = document.querySelector(".slider_box_btn_left");
+const sliderRight = document.querySelector(".slider_box_btn_right");
 
 window.onload = function () {
   edit.addEventListener("click", editing);
@@ -16,6 +24,8 @@ window.onload = function () {
   modalBtn.addEventListener("click", openModal);
   modalExit.addEventListener("click", closeModal);
   menuBtn.addEventListener("click", showMenu);
+  sliderLeft.addEventListener("click", leftMove);
+  sliderRight.addEventListener("click", rightMove);
 };
 function editing() {
   if (this.parentElement.children[0].readOnly == true) {
@@ -49,4 +59,22 @@ function closeModal() {
 }
 function showMenu() {
   sideMenu.classList.toggle("active");
+}
+
+function leftMove() {
+  if (sliderPage > 0) {
+    sliderPage--;
+    sliderContain.style.transform = `translateX(${sliderPage * -33.3}%)`;
+  } else {
+    return;
+  }
+}
+function rightMove() {
+  if (sliderPage < 2) {
+    sliderPage++;
+    sliderContain.style.transform = `translateX(${sliderPage * -33.3}%)`;
+    console.log(sliderPage);
+  } else {
+    return;
+  }
 }

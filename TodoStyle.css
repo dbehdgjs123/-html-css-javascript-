@@ -20,11 +20,86 @@ li {
 
 #page_main {
   position: relative;
-  margin: 0 auto;
+  width: 100%;
 }
 .page_main_one {
   width: 450px;
   height: 969px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+}
+.page_main_two {
+  background-color: darkturquoise;
+  width: 100%;
+  height: 969px;
+}
+#main_section_two {
+  position: relative;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  overflow: auto;
+}
+.slider_one {
+  text-align: center;
+  height: 33.3%;
+  margin-top: 50px;
+}
+.slider_box {
+  position: relative;
+  width: 325px;
+  height: 60%;
+  margin: 0 auto;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.slider_box_contain {
+  height: 100%;
+  width: 975px;
+  display: flex; /*float left로 줄 수 있다. 하지만 요소 하나 하나 다 줘야하기 때문에 flex가 더 간편하다*/
+  transition: 0.5s ease-in-out;
+}
+.slider_box_contain :nth-child(1) {
+  width: 33.3%;
+  height: 100%;
+  background-color: darkviolet;
+}
+.slider_box ul :nth-child(2) {
+  width: 33.3%;
+  height: 100%;
+  background-color: yellow;
+}
+.slider_box ul :nth-child(3) {
+  width: 33.3%;
+  height: 100%;
+  background-color: blue;
+}
+.slider_box_btn {
+  display: flex;
+  width: 325px;
+  margin: 0 auto;
+  margin-top: 5px;
+  padding: 5px 5px;
+  justify-content: space-between;
+}
+.slider_box_btn_left,
+.slider_box_btn_right {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  color: antiquewhite;
+  background-color: coral;
+}
+
+#main_footer {
+  text-align: center;
+  height: 400px;
+  bottom: 0px;
+  margin-top: 100px;
 }
 
 #main_header {
@@ -230,15 +305,7 @@ ul.TODoList {
   left: 0px;
   transition: 0.5s ease;
 }
-#page_two {
-  background-color: darkturquoise;
-  width: 100%;
-  height: 969px;
-}
-#main_footer {
-  text-align: center;
-  height: 400px;
-}
+
 @media screen and (max-width: 768px) {
   #side-nav {
     width: 55%;
@@ -256,5 +323,9 @@ ul.TODoList {
     font-size: 20px;
     width: 100%;
     transition: 1s;
+  }
+  .slider_box_btn {
+    width: 60%;
+    transition: all 0.4s linear;
   }
 }
