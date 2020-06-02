@@ -6,6 +6,8 @@ const toDoList = document.querySelector(".TODoList");
 const modalBtn = document.querySelector(".modalBtn");
 const modalExit = document.querySelector(".modalExit");
 const modalPage = document.getElementById("modalPage");
+const menuBtn = document.querySelector(".menu_icon");
+const sideMenu = document.getElementById("side-nav");
 
 window.onload = function () {
   edit.addEventListener("click", editing);
@@ -13,6 +15,7 @@ window.onload = function () {
   add.addEventListener("click", adding);
   modalBtn.addEventListener("click", openModal);
   modalExit.addEventListener("click", closeModal);
+  menuBtn.addEventListener("click", showMenu);
 };
 function editing() {
   if (this.parentElement.children[0].readOnly == true) {
@@ -28,9 +31,6 @@ function adding() {
   let inputText = addText.value;
   if (inputText != "") {
     let liAdd = document.createElement("li");
-    let inputAdd = document.createElement("input");
-    let editBtn = document.createElement("button");
-    let deleteBtn = document.createElement("button");
     liAdd.setAttribute("class", "toDO");
     liAdd.innerHTML = `<input type="text" value= ${inputText} readonly /><button class="edit">수정</button><button class="delete">삭제</button>`;
     liAdd.children[1].addEventListener("click", editing);
@@ -46,4 +46,7 @@ function openModal() {
 }
 function closeModal() {
   modalPage.classList.remove("active");
+}
+function showMenu() {
+  sideMenu.classList.toggle("active");
 }

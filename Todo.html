@@ -6,29 +6,40 @@
     <title>TODO</title>
     <link rel="stylesheet" href="./TodoStyle.css" />
     <script defer src="./ToDo.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f6826fd6bf.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div id="page">
-      <header id="main_header">
-        <div class="header_item">
-          <form id="toDoForm">
-            <h1>TODOLIST!</h1>
-            <input type="text" class="addText" placeholder="할 일 추가.." />
-            <input type="button" class="add" value="추가" />
-          </form>
-        </div>
-      </header>
-      <section id="main_section">
-        <ul class="TODoList">
-          <li class="toDO">
-            <input type="text" value="코딩하기" readonly />
-            <button class="edit">수정</button>
-            <button class="delete">삭제</button>
-          </li>
-        </ul>
-      </section>
-      <button class="modalBtn">모달창</button>
+    <div id="page_main">
+      <div class="page_main_one">
+        <header id="main_header">
+          <div class="header_item">
+            <form id="toDoForm">
+              <h1>TODOLIST!</h1>
+              <input type="text" class="addText" placeholder="할 일 추가.." />
+              <input type="button" class="add" value="추가" />
+            </form>
+          </div>
+        </header>
+        <section id="main_section">
+          <ul class="TODoList">
+            <li class="toDO">
+              <input type="text" value="코딩하기" readonly />
+              <button class="edit">수정</button>
+              <button class="delete">삭제</button>
+            </li>
+          </ul>
+          <button class="modalBtn">모달창</button>
+        </section>
+      </div>
+      <div id="page_two"></div>
     </div>
+
+    <footer id="main_footer">
+      footer
+    </footer>
     <div id="modalPage">
       <div class="modalPannel">
         <div class="modalWindow">
@@ -37,5 +48,18 @@
         </div>
       </div>
     </div>
+    <aside id="side-nav">
+      <ul>
+        <li class="nav_item_title">사이드메뉴</li>
+        <li class="nav_item">메뉴1</li>
+        <li class="nav_item">메뉴2</li>
+        <li class="nav_item">메뉴3</li>
+        <li class="nav_item">메뉴4</li>
+        <li class="nav_item">메뉴5</li>
+      </ul>
+      <button type="button" class="menu_icon">
+        <i class="fas fa-bars fa-3x"></i>
+      </button>
+    </aside>
   </body>
 </html>
