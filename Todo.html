@@ -14,50 +14,78 @@
   <body>
     <div id="page_main">
       <div class="page_main_one">
-        <header id="main_header">
-          <div class="header_item">
-            <form id="toDoForm">
-              <h1>TODOLIST!</h1>
-              <input type="text" class="addText" placeholder="할 일 추가.." />
-              <input type="button" class="add" value="추가" />
-            </form>
+        <section id="main_section_one">
+          <header id="main_header">
+            <div class="header_item">
+              <form id="toDoForm">
+                <h1>TODOLIST!</h1>
+                <input type="text" class="addText" placeholder="할 일 추가.." />
+                <input type="button" class="add" value="추가" />
+              </form>
+            </div>
+          </header>
+          <div id="toDo_contain">
+            <ul class="TODoList">
+              <li class="toDO">
+                <input type="text" value="코딩하기" readonly />
+                <button class="edit">수정</button>
+                <button class="delete">삭제</button>
+              </li>
+            </ul>
+            <button class="modalBtn">모달창</button>
           </div>
-        </header>
-        <section id="main_section">
-          <ul class="TODoList">
-            <li class="toDO">
-              <input type="text" value="코딩하기" readonly />
-              <button class="edit">수정</button>
-              <button class="delete">삭제</button>
-            </li>
-          </ul>
-          <button class="modalBtn">모달창</button>
         </section>
       </div>
       <div class="page_main_two">
         <section id="main_section_two">
-          <div class="slider_one">
-            <h1>기본 슬라이더</h1>
-            <div class="slider_box">
-              <ul class="slider_box_contain">
-                <li class="slider_item"></li>
-                <li class="slider_item"></li>
-                <li class="slider_item"></li>
+          <div class="slider_section">
+            <div class="slider_one">
+              <h1>기본 슬라이더</h1>
+              <div class="slider_box">
+                <ul class="slider_box_contain">
+                  <li class="slider_item"></li>
+                  <li class="slider_item"></li>
+                  <li class="slider_item"></li>
+                  <li class="slider_item"></li>
+                  <li class="slider_item"></li>
+                </ul>
+              </div>
+              <ul class="slider_box_btn">
+                <li class="left_btn">
+                  <button class="slider_box_btn_left">◀</button>
+                </li>
+                <li class="right_btn">
+                  <button class="slider_box_btn_right">▶</button>
+                </li>
               </ul>
             </div>
-            <ul class="slider_box_btn">
-              <li class="left_btn">
-                <button class="slider_box_btn_left">◀</button>
-              </li>
-              <li class="right_btn">
-                <button class="slider_box_btn_right">▶</button>
-              </li>
-            </ul>
+            <div class="slider_one">
+              <h1>자동 슬라이더</h1>
+              <div class="slider_box">
+                <ul class="slider_box_contain auto_slider_box_contain">
+                  <li class="slider_item"></li>
+                  <li class="slider_item"></li>
+                  <li class="slider_item"></li>
+                  <li class="slider_item"></li>
+                  <li class="slider_item"></li>
+                </ul>
+              </div>
+              <ul class="slider_box_btn_auto">
+                <li class="auto_btn_item">
+                  <button class="auto_btn_one"></button>
+                </li>
+                <li class="auto_btn_item">
+                  <button class="auto_btn_two"></button>
+                </li>
+                <li class="auto_btn_item">
+                  <button class="auto_btn_three"></button>
+                </li>
+              </ul>
+            </div>
           </div>
-
           <!--<h1>자동 슬라이더</h1>
           <div class="slider_box_one"></div>
-          <h1>업그레이드 슬라이더</h1>
+          <h1>캐러셀 슬라이더</h1>
           <div class="slider_box_one"></div>-->
         </section>
       </div>

@@ -23,83 +23,19 @@ li {
   width: 100%;
 }
 .page_main_one {
-  width: 450px;
+  width: auto;
+  max-width: 450px;
   height: 969px;
   display: flex;
   margin: 0 auto;
+  vertical-align: middle;
   flex-direction: column;
   justify-content: center;
 }
-.page_main_two {
-  background-color: darkturquoise;
+#main_section_one {
+  position: relative;
   width: 100%;
-  height: 969px;
-}
-#main_section_two {
-  position: relative;
-  height: 100%;
-  width: 80%;
-  margin: 0 auto;
-  overflow: auto;
-}
-.slider_one {
-  text-align: center;
-  height: 33.3%;
-  margin-top: 50px;
-}
-.slider_box {
-  position: relative;
-  width: 325px;
-  height: 60%;
-  margin: 0 auto;
-  margin-top: 20px;
-  overflow: hidden;
-}
-.slider_box_contain {
-  height: 100%;
-  width: 975px;
-  display: flex; /*float left로 줄 수 있다. 하지만 요소 하나 하나 다 줘야하기 때문에 flex가 더 간편하다*/
-  transition: 0.5s ease-in-out;
-}
-.slider_box_contain :nth-child(1) {
-  width: 33.3%;
-  height: 100%;
-  background-color: darkviolet;
-}
-.slider_box ul :nth-child(2) {
-  width: 33.3%;
-  height: 100%;
-  background-color: yellow;
-}
-.slider_box ul :nth-child(3) {
-  width: 33.3%;
-  height: 100%;
-  background-color: blue;
-}
-.slider_box_btn {
-  display: flex;
-  width: 325px;
-  margin: 0 auto;
-  margin-top: 5px;
-  padding: 5px 5px;
-  justify-content: space-between;
-}
-.slider_box_btn_left,
-.slider_box_btn_right {
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-  border: none;
-  outline: none;
-  color: antiquewhite;
-  background-color: coral;
-}
-
-#main_footer {
-  text-align: center;
-  height: 400px;
-  bottom: 0px;
-  margin-top: 100px;
+  bottom: 100px;
 }
 
 #main_header {
@@ -110,7 +46,7 @@ li {
   justify-content: center;
   align-items: center;
 }
-#main_section {
+#toDo_contain {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -202,6 +138,100 @@ ul.TODoList {
   color: whitesmoke;
   border-radius: 5px 0px 0px 5px;
 }
+.page_main_two {
+  background-color: darkturquoise;
+  width: 100%;
+  height: 969px;
+}
+#main_section_two {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+.slider_section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.slider_one {
+  text-align: center;
+  height: 325px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.slider_box {
+  position: relative;
+  width: 325px;
+  height: 60%;
+  margin: 0 auto;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.slider_box_contain {
+  height: 100%;
+  width: 1625px;
+  display: flex; /*float left로 줄 수 있다. 하지만 요소 하나 하나 다 줘야하기 때문에 flex가 더 간편하다*/
+}
+
+.slider_box_contain :nth-child(2),
+.slider_box_contain :nth-child(5) {
+  width: 325px;
+  height: 100%;
+  background-color: darkviolet;
+}
+.slider_box ul :nth-child(3) {
+  width: 325px;
+  height: 100%;
+  background-color: yellow;
+}
+.slider_box_contain :nth-child(1),
+.slider_box_contain :nth-child(4) {
+  width: 325px;
+  height: 100%;
+  background-color: blue;
+}
+.slider_box_btn {
+  display: flex;
+  width: 325px;
+  margin: 0 auto;
+  margin-top: 5px;
+  padding: 5px 5px;
+  justify-content: space-between;
+}
+.slider_box_btn_left,
+.slider_box_btn_right {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  color: antiquewhite;
+  background-color: coral;
+}
+.slider_box_btn_auto {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 325px;
+}
+.auto_btn_item button {
+  width: 10px;
+  height: 10px;
+  margin: 0px 8px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: gray;
+}
+
+#main_footer {
+  text-align: center;
+  height: 400px;
+  bottom: 0px;
+  margin-top: 100px;
+}
 
 #modalPage {
   position: absolute;
@@ -213,7 +243,6 @@ ul.TODoList {
   display: block;
 }
 .modalPannel {
-  background-color: black;
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
@@ -322,7 +351,7 @@ ul.TODoList {
   .nav_item {
     font-size: 20px;
     width: 100%;
-    transition: 1s;
+    transition: font-size 1s;
   }
   .slider_box_btn {
     width: 60%;
