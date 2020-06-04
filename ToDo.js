@@ -28,6 +28,9 @@ const autoSliderThree = document.querySelector(".auto_btn_three");
 autoSliderContain.style.transform = `translateX(${autoSliderPage * -325}px)`; //두번째 요소(두번째 자식)부터 시작해야함.
 autoSliderOne.style.backgroundColor = "White";
 
+const dragBoxes = document.querySelectorAll(".drag_box");
+const imgBoxes = document.querySelectorAll(".drag_imgbox");
+
 window.onload = function () {
   edit.addEventListener("click", editing);
   del.addEventListener("click", deleting);
@@ -44,6 +47,16 @@ window.onload = function () {
   autoSliderContain.addEventListener("transitionend", autoSliderReset);
   autoSliderContain.addEventListener("transitionstart", autoBtnColor);
   setInterval(autoMove, 3000);
+
+  for (const box of dragBoxes) {
+    box.addEventListener("drop", dropped);
+    box.addEventListener("dragover", dropping);
+  }
+  for (const imgbox of imgBoxes) {
+    imgbox.addEventListener("drop", imgDropped);
+    imgbox.addEventListener("dragover", imgDropping);
+    imgbox.addEventListener("dragleave", imgDropLeave);
+  }
 };
 function editing() {
   if (this.parentElement.children[0].readOnly == true) {
@@ -219,4 +232,51 @@ function autoBtnColor() {
     autoSliderTwo.style.backgroundColor = "gray";
     autoSliderThree.style.backgroundColor = "gray";
   }
+}
+
+function drag(e) {
+  //드래그 시작했을때
+  e.dataTransfer.setData("redBox", e.target.id);
+  setTimeout(
+    () => e.target.classList.add("droping_box"), //드래그한 요소 없어지는 효과
+    0
+  );
+}
+
+function dropped(e) {
+  //드롭되었을때
+  e.preventDefault(); //기본 동작 방지 (링크로 열거나. 클릭 되는 등)
+  let data = e.dataTransfer.getData("redBox");
+  e.target.appendChild(document.getElementById(data));
+}
+function dropping(e) {
+  //드롭한 아이템이 요소위를 지나갈때
+  e.preventDefault(); //기본 동작 방지 (원래 데이터/요소는 다른 요소에 드롭 x)
+}
+function dragEnd(e) {
+  e.target.classList.remove("droping_box");
+}
+function imgDropped(e) {
+  console.log("dorpped");
+  e.preventDefault();
+  let files = e.target.files || e.dataTransfer.files;
+
+  if (files.length > 1) {
+    alert("파일은 최대 하나를 추가할 수 있습니다.");
+    return;
+  }
+  if (files[0].type.match("image/*")) {
+    e.target.style.backgroundImage = `url(${window.URL.createObjectURL(
+      files[0]
+    )})`;
+    e.target.style.backgroundSize = "100% 100%";
+  } else {
+    alert("이미지 파일만 가능합니다.");
+  }
+}
+function imgDropping(e) {
+  e.preventDefault();
+}
+function imgDropLeave(e) {
+  console.log("leave");
 }
